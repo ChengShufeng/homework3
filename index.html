@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>微软必应词典</title>
+	<link rel="shortcut icon" href="images/favicon.ico" />
+	<style type="text/css">
+		/* reset */
+		* {
+			margin: 0; padding: 0;
+		}
+
+		ol, ul {
+			    list-style: none;
+			}
+
+		body {
+			  font-family: "Microsoft Yahei",Tahoma,"SimSun";
+			  font-size: 12px;
+			}
+
+		img { 
+			 border: none;
+			 text-align: center;
+			 vertical-align: middle;
+			}
+
+		a, a:link, a:active, a:focus, a:hover {
+			       color: #666; 
+			       text-decoration: none;
+			   }
+
+	    .clearfix:after {
+	    	content: ".";
+            display: block;
+		    clear: both;
+		    height: 0;
+		    visibility: hidden;
+		}
+		/* global */
+		html {
+			overflow-x: hidden;
+		}
+
+		.w1000 {
+			margin: 0 auto;
+			width: 1000px;
+		}
+		/* header */
+		#header {
+			background-color: #1a1a1a; 
+			height: 85px;
+		}
+
+		#logo {
+			float: left; 
+			padding:25px 0 0 25px;
+		}
+
+		#products {
+			float: right; 
+			text-align: center; 
+			padding-right:10px;
+		}
+
+		    #products ul {
+		    	overflow: hidden;
+		    }
+
+	        #products li {
+	        	float: left; 
+	        	font-size: 12px;
+	        }
+
+	            #products li a, #products li a:link {
+	            	color: #999; 
+	            	text-decoration: none; 
+	            	line-height: 20px; 
+	            	margin-left: 1px; 
+	            	width: 100px; 
+            	    height: 20px; 
+            	    background-color: #313131; 
+            	    display: block;
+            	}
+
+	            	#products li a:hover { 
+	            		background-color: #484848; 
+	            	}
+	    /* nav */
+	    #nav { 
+	    	height: 37px; 
+	    	line-height: 37px; 
+	    	background: #333; 
+	    	font-size: 16px; 
+	    }
+
+	        #nav li { 
+	        	float: left; 
+	        	padding: 0 25px; 
+	        }
+
+	        #nav a, #nav a:link { 
+	        	color: #adadad; 
+	        }
+
+	            #nav a:hover { 
+	            	color: #D7512C; 
+	            }
+	    /* slide */
+	    #slide { 
+	    	overflow: hidden; 
+	    	height: 398px; 
+	    	width: 100%; 
+	    	position: relative; 
+	    }
+
+        #slide_mask {
+        	width: 100%;
+        	height: 9px;
+        	bottom: 0;
+        	left: 0;
+        	position: absolute;
+        	z-index: 10000;
+        	background: url(images/bg_slide_mask.png) repeat-x;
+        }
+        
+	    .slide_main { 
+	    	text-align: center; 
+	    	height: 398px; 
+	    	overflow: hidden; 
+	    }
+
+	    #slide_img_wrap { 
+	    	width: 100%; 
+	    	height: 398px; 
+	    	position: relative; 
+	    }
+
+	        #slide_img_wrap a, #slide_img_wrap a:link { 
+	        	display: block; 
+	        	width: 100%; 
+	        	height: 100%; 
+	        }
+
+	    .slide_navi {
+	    	width: 1000px;
+	    	top: 0;
+	    	left: 0;
+	    	height: 1px;
+	    	position: relative;
+	    	margin: 0 auto;
+	    }
+
+	        .slide_navi #inner {
+	        	display: inline;
+	    	    position: absolute;
+	    	    top: -30px;
+	    	    right: 40px;
+	        }
+
+	        .slide_navi li {
+	        	float: left;
+	        }
+
+	        .slide_navi span {
+	        	margin-right: 4px;
+	        	float: left;
+	        	width: 17px;
+                height: 17px;
+                background: url(images/bg_slide_navi.png) -20px 0;
+	        }
+
+	        .slide_navi span:hover, .slide_navi .slide_navi_cur {
+	        	background: url(images/bg_slide_navi.png);
+	        }
+
+	    /* activities */
+	    #activities {
+            padding:50px 40px 100px;
+            width:920px;
+            margin:0 auto;
+            color:#333;
+        }
+
+        #activities .activities_name {
+        	font-size:36px; 
+        	margin-bottom:30px; 
+        	font-weight:normal;"
+        }
+
+        #activities li {
+		        width:445px;
+		        height:115px;
+		        float:left;
+		        margin-bottom:20px;
+		    }
+
+			    #activities li.even {
+		            float:right;
+		        }
+
+	    #activities .img {
+			    width:240px;
+			    height:114px;
+			    float:left;
+			}
+			
+        #activities .desc {
+			    width:190px;
+			    float:right;
+			}
+
+	    #activities .desc_name {
+			    font-size:16px; 
+			    color:#069; 
+			    margin:0 0 10px;
+			}
+
+		    #activities .desc_name a,#activities .desc_name a:link {
+                color:#069;
+            }
+
+        #activities ul:after {
+	    	content: ".";
+            display: block;
+		    clear: both;
+		    height: 0;
+		    visibility: hidden;
+		}
+			
+	    /* footer */
+	    .footer {
+			    color: #fff;
+			    font-size: 12px;
+			    background: #333;
+			    border-top: 7px solid #D7512C;
+			    padding-bottom: 20px;
+			}
+
+
+		.footer .w1000:after {
+			content: ".";
+            display: block;
+		    clear: both;
+		    height: 0;
+		    visibility: hidden;
+		}   
+
+		.friend_link {
+				height: 220px;
+			    margin-top: 40px;
+			    text-align: center;
+			}
+
+		    .friend_link p {
+		        margin-left: 20px;
+		        text-align: left;
+		    }
+
+			    .friend_link p a, .friend_link p a:link {
+		            display: block;
+		            width: 210px;
+		            height: 32px;
+		            padding-left: 30px;
+		            background: url(images/bg_back.jpg) no-repeat 0 0;
+		        }
+
+                .friend_link p a:hover {
+                    background-position:0 -31px;
+                }
+
+            .friend_link ul {
+                    padding: 20px 0 0 15px;
+                }
+
+            .friend_link li {
+			        float: left;
+			        width: 100px;
+			        height: 90px;
+			        padding-left: 15px;
+			        font-size: 12px;
+			    }
+
+			    .friend_link li a, .friend_link li a:link {
+					text-decoration: none;
+					color: #fff;
+				}
+
+			    .friend_link li.on {
+                    padding-left: 25px;
+                }
+
+			.bing_product {
+					display: block;
+			        width: 68px;
+			        height: 68px;
+			        margin: 0 16px 5px;
+			        background: url(images/bg_bing_foot.gif) no-repeat;
+			    }
+
+            .bing_search {
+			        background-position: 0 0;
+			    }
+
+		    .fri.bing_dict {
+			        background-position: -68px 0;
+			    }
+
+		    .bing_desktop {
+			        background-position: -136px 0;
+			    }
+
+		    .bing_pinyin {
+			        background-position: -204px 0;
+			        width:67px;
+			    }
+
+		    .bing_bar {
+			        background-position: -272px 0;
+			    }
+
+		    .bing_navi {
+			        background-position: -340px 0;
+			    }
+
+		    .bing_robert {
+			        background-position: -408px 0;
+			    }
+			    
+		    .bing_map {
+			        background-position: -476px 0;
+			    }
+			    
+        .copyright { 
+        	float: left;
+		    margin-top: 15px;
+		}
+
+        .copyright li {
+		    float: left;
+		    margin: 0 10px;
+		}
+
+		    .copyright li.on {
+		        padding-right: 25px;
+		    }
+
+		    .copyright li a, .copyright li a:link {
+			    text-decoration: none;
+			    color: #fff;
+			}
+
+		    .copyright li a:hover {
+		        color: #999;
+		    }
+
+		.icp_num {
+		    float: right;
+		    margin-top: 15px;
+		}
+
+		.icp_num li {
+		    float: left;
+		    margin: 0 10px;
+		} 
+	</style>
+</head>
+<body onload="autoTabStart()">
+<!--header start-->
+    <div id="header">
+        <div class="w1000">
+        	<div id="logo">
+                <a href="http://bing.msn.cn/dict/"><img src="images/logo.gif" alt="必应词典" /></a>	
+        	</div>
+        	<div id="products">
+        	    <ul>
+        	    	<li><a href="http://bing.msn.cn/" target="_blank">必应软件中心</a></li>
+                    <li><a href="http://cn.bing.com/" target="_blank">必应搜索</a></li>
+                    <li><a href="http://cn.msn.com/" target="_blank">MSN中文网</a></li>
+                    <li><a id="add_favorite" href="javascript:;">加入收藏</a></li>
+        	    </ul>
+        	</div>
+        </div>
+    </div>
+<!--header end-->
+<!--nav start-->
+    <div id="nav">
+        <div class="w1000">
+            <ul>
+	            <li><a href="http://bing.msn.cn/dict/index.shtml">首页</a></li>
+	            <li><a href="http://bing.msn.cn/dict/desktop">桌面版</a></li>
+	            <li><a href="http://bing.msn.cn/dict/wp">移动版</a></li>
+	            <li><a href="http://bing.msn.cn/dict/other">周边</a></li>
+	            <li><a href="http://bing.msn.cn/dict/faq">有求必应</a></li>
+	        </ul>
+        </div>
+    </div>
+<!--nav end-->	
+<!--slide start-->
+    <div id="slide">
+        <div id="slide_mask"></div>
+    	<div class="slide_main">
+    		<ul id="slide_img_wrap">
+    		    <li><a target="_blank" name="bing_banner_image" href="http://bing.msn.cn/dict/desktop"><img src ="images/PC版.jpg" /></a></li>
+    		    <li style="display:none;"><a target="_blank" name="bing_banner_image" href="http://bing.msn.cn/dict/mobile/iphone"><img src="images/IOS版.jpg" /></a></li>
+    		    <li style="display:none;"><a target="_blank" name="bing_banner_image" href="http://bing.msn.cn/dict/android"><img src="images/Android版.jpg" /></a></li>
+    		</ul>
+    	</div>
+    	<div class="slide_navi">
+    		<div id="inner">
+    			<span class="slide_navi_cur"></span>
+    			<span></span>
+    			<span></span>
+    		</div>
+    	</div>
+    </div>
+<!--slide end-->
+<!--activities start-->
+    <div id="activities">
+    	<p class="activities_name">热门活动</p>
+    	<ul>
+    	    <li>
+	    	    <div class="img">
+	    	        <a target="_blank" href="http://bing.msn.cn/pinyin"><img src="images/pifudasai.jpg" /></a>
+	    	    </div>
+	    	    <div class="desc">
+	    	        <p class="desc_name">
+	    	            <a target="_blank" href="http://bing.msn.cn/pinyin">必应输入法皮肤大赛</a>
+	    	        </p>
+	    	        <p>必应输入法首届皮肤大赛，把你的皮肤作品分享给用户，还能赢大奖！</p>
+	    	    </div>
+	    	</li>
+	    	<li class="even">
+	    	    <div class="img">
+	    	        <a target="_blank" href="http://bing.msn.cn/dict/wordgame/index.shtml"><img src="images/yingdajiang.jpg" /></a>
+	    	    </div>
+	    	    <div class="desc">
+	    	        <p class="desc_name">
+	    	            <a target="_blank" href="http://bing.msn.cn/dict/wordgame/index.shtml">必应词典在手，英语考试无忧</a>
+	    	        </p>
+	    	        <p>来必应词典，参加单词挑战，听必应电台，用生词本云同步，轻轻松松搞定英语！快乐学英语，还有机会赢大奖！</p>
+	    	    </div>
+	    	</li>
+	    </ul>
+	</div>
+<!--activities end-->
+<!--footer start-->
+    <div class="footer">
+        <div class="w1000">
+            <div class="friend_link">
+            	<p><a href="http://bing.msn.cn" target="_blank"><img src="images/bg_bing_center.jpg" /></a></p>
+            	<ul>
+            		<li class="on"><a href="http://cn.bing.com/" target="_blank">
+                                        <span class="bing_product bing_search"></span>必应搜索</a>
+                    </li>
+                    <li><a href="http://dict.bing.msn.cn/" target="_blank">
+                            <span class="bing_product bing_dict"></span>必应词典</a>
+                    </li>
+                    <li><a href="http://desktop.bing.msn.cn/" target="_blank">
+                            <span class="bing_product bing_desktop"></span>必应缤纷桌面</a>
+                    </li>
+                    <li><a href="http://pinyin.engkoo.com/" target="_blank">
+                            <span class="bing_product bing_pinyin"></span>必应输入法</a>
+                    </li>
+                    <li><a href="http://bingbar.bing.msn.cn/" target="_blank">
+                            <span class="bing_product bing_bar"></span>必应工具栏</a>
+                    </li>
+                    <li><a href="http://cn.bing.com/123" target="_blank">
+                            <span class="bing_product bing_navi"></span>必应导航</a>
+                    </li>
+                    <li><a href="http://renlifang.msra.cn/Q20/index.aspx" target="_blank">
+                            <span class="bing_product bing_robert"></span>必应读心机器人</a>
+                    </li>
+                    <li><a href="http://www.windowsphone.com/zh-cn/store/app/%E5%BF%85%E5%BA%94%E5%9C%B0%E5%9B%BE/3d382aea-9c62-4681-bc39-d7a08266640e" target="_blank"><span class="bing_product bing_map"></span>必应地图</a></li>
+            	</ul>
+            </div>
+            <ul class="copyright">
+                <li class="on">&copy;<span>2013 Microsoft 版权所有</span></li>
+                <li><a target="_blank" href="http://www.microsoft.com/privacystatement/zh-cn/core/default.aspx">隐私声明</a></li>
+                <li><a target="_blank" href="http://windows.microsoft.com/zh-CN/windows-live/microsoft-service-agreement">使用条款</a></li>
+                <li><a target="_blank" href="http://bing.msn.cn/dict/feedback/web/">联系我们</a></li>
+            </ul>
+            <ul class="icp_num">
+                <li><span>ICP证合字B2-20050001号</span></li>
+                <li><span>沪ICP备10042051号</span></li>
+                <li>
+                    <img src="images/ms_logo.jpg" />
+                </li>
+            </ul> 
+        </div>	
+    </div>
+<!--footer end-->
+    <script type="text/javascript">
+	    /* slide */
+	    var cont = document.getElementById("slide_img_wrap").getElementsByTagName("li"),
+	    navi = document.getElementById("inner").getElementsByTagName("span"),
+	    index,slideTimer;
+	    
+		var getCurIndex = function()
+		{
+			for(var a=0;a<navi.length;a++)
+			{
+				if(navi[a].className.indexOf("slide_navi_cur")!=-1)
+				    return a;
+			}
+		}
+
+		var show = function(index)
+		{
+            for(var k=0;k<navi.length;k++)
+		        {
+		        	cont[k].style.display = "none";
+		        	navi[k].className = "";
+		        }
+			cont[index].style.display = "";
+			navi[index].className = "slide_navi_cur";
+		}
+
+		var auto_slide = function(s)
+		{
+			index=getCurIndex();
+			if(s)
+			{
+				index++;
+				if(index >= navi.length)
+					index = 0;
+			}
+			show(index);
+		}
+
+		var autoTabStart = function()
+		{
+		    slideTimer = setInterval(function(){auto_slide(true);},2000);
+		}
+
+		var autoTapStop = function()
+		{
+		 	clearInterval(slideTimer);
+		}
+
+		for (var i=0;i<navi.length;i++)
+	    {
+	        var navi_item = navi[i];
+	        navi_item.onclick = function()
+	        {
+	        	autoTapStop();
+	          	index = 0;
+	          	for(var j=0;j<navi.length;j++)
+	          	{
+	          		if(this==navi[j])
+	          		{
+	          			index = j;
+	          			break;
+	          		}
+	          	}
+	          	show(index);
+	          	setTimeout(autoTabStart(),2000);
+	        }  
+		}
+	</script>
+</body>
+</html>
